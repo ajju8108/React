@@ -2,7 +2,7 @@ import React from "react";
 interface Props {
   color?: "primary" | "secondary" | "danger";
   children: string;
-  onClick: () => void;
+  onClick: () => void | boolean;
 }
 
 export default function ExeButton({
