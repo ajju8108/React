@@ -4,6 +4,7 @@ import ExeAlert from "./components/Exe1/ExeAlert";
 import ExeButton from "./components/Exe1/ExeButton";
 import ListGroup from "./components/ListGroup";
 import { BsFillCalendarFill } from "react-icons/bs";
+import Like from "./components/Exe1/Like";
 
 function App() {
   const [alertVisible, setalertVisible] = useState(false);
@@ -22,8 +23,13 @@ function App() {
       {/* {alertVisible && (
         <ExeAlert onClose={() => setalertVisible(false)}>My Alert</ExeAlert>
       )} */}
-      <ExeButton onClick={() => setalertVisible(true)}>MyBUtton</ExeButton>
+      {/* <ExeButton onClick={() => setalertVisible(true)}>MyBUtton</ExeButton> */}
       {/* <BsFillCalendarFill color="red" size={60} /> */}
+      <Like
+        onClick={() => {
+          console.log("clicked");
+        }}
+      />
     </div>
   );
 }
