@@ -3,6 +3,7 @@ import Alert from "./components/Alert";
 import ExeAlert from "./components/ExeAlert";
 import ExeButton from "./components/ExeButton";
 import ListGroup from "./components/ListGroup";
+import { BsFillCalendarFill } from "react-icons/bs";
 
 function App() {
   const [alertVisible, setalertVisible] = useState(false);
@@ -22,6 +23,7 @@ function App() {
         <ExeAlert onClose={() => setalertVisible(false)}>My Alert</ExeAlert>
       )}
       <ExeButton onClick={() => setalertVisible(true)}>MyBUtton</ExeButton> */}
+      <BsFillCalendarFill color="red" size={60} />
     </div>
   );
 }
