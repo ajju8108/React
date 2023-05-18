@@ -10,6 +10,9 @@ import StateStructer from "./Managing State/state structer/StateStructer";
 import Pure from "./Managing State/Pure Component/Pure";
 import UpdateObject from "./Managing State/Updating Objects/UpdateObject";
 import UpdatingArray from "./Managing State/Updating Array/UpdatingArray";
+import Exe from "./Managing State/Exe/Exe";
+import Exe2 from "./Managing State/Exe/Exe2";
+import Exe3 from "./Managing State/Exe/Exe3";
 
 function App() {
   /*  const [alertVisible, setalertVisible] = useState(false);
@@ -56,7 +59,9 @@ function App() {
       <Pure />
       <Pure /> */}
       {/* <UpdateObject /> */}
-      <UpdatingArray />
+      {/* <UpdatingArray /> */}
+      {/* <Exe /> */}
+      <Exe3 />
     </div>
   );
 }
