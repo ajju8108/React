@@ -5,11 +5,11 @@ import ExeButton from "./components/Exe1/ExeButton";
 import ListGroup from "./components/ListGroup";
 import { BsFillCalendarFill } from "react-icons/bs";
 import Like from "./components/Exe1/Like"; */
-
 import { useState } from "react";
 import StateStructer from "./Managing State/state structer/StateStructer";
 import Pure from "./Managing State/Pure Component/Pure";
 import UpdateObject from "./Managing State/Updating Objects/UpdateObject";
+import UpdatingArray from "./Managing State/Updating Array/UpdatingArray";
 
 function App() {
   /*  const [alertVisible, setalertVisible] = useState(false);
@@ -55,7 +55,8 @@ function App() {
       {/* <Pure />
       <Pure />
       <Pure /> */}
-      <UpdateObject />
+      {/* <UpdateObject /> */}
+      <UpdatingArray />
     </div>
   );
 }
