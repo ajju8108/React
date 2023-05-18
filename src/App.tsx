@@ -13,6 +13,7 @@ import UpdatingArray from "./Managing State/Updating Array/UpdatingArray";
 import Exe from "./Managing State/Exe/Exe";
 import Exe2 from "./Managing State/Exe/Exe2";
 import Exe3 from "./Managing State/Exe/Exe3";
+import ExpandableText from "./Managing State/Expandable/ExpandableText";
 
 function App() {
   /*  const [alertVisible, setalertVisible] = useState(false);
@@ -61,7 +62,32 @@ function App() {
       {/* <UpdateObject /> */}
       {/* <UpdatingArray /> */}
       {/* <Exe /> */}
-      <Exe3 />
+      {/* <Exe3 /> */}
+      <ExpandableText /* maxChars={10} */>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde nemo
+        officia cupiditate, saepe maxime vel quasi enim perferendis repudiandae
+        laudantium ducimus deserunt facilis nostrum aut laboriosam amet, aliquam
+        quisquam distinctio harum molestias itaque sapiente sequi officiis
+        porro. Vitae harum magnam corporis reiciendis ipsum dolores
+        consequuntur? Et amet architecto eius quidem facilis ratione eos nobis
+        inventore id consequuntur tempore quisquam eveniet, odio cum
+        consectetur, rerum ea officia assumenda laborum repellat quos nihil ut
+        vel neque. Excepturi consectetur debitis, ratione provident numquam
+        repellendus tenetur facilis dolorum! Esse vero omnis minus harum quas,
+        doloribus, facere, natus aspernatur corrupti quia itaque fugit ducimus
+        ipsum! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde
+        nemo officia cupiditate, saepe maxime vel quasi enim perferendis
+        repudiandae laudantium ducimus deserunt facilis nostrum aut laboriosam
+        amet, aliquam quisquam distinctio harum molestias itaque sapiente sequi
+        officiis porro. Vitae harum magnam corporis reiciendis ipsum dolores
+        consequuntur? Et amet architecto eius quidem facilis ratione eos nobis
+        inventore id consequuntur tempore quisquam eveniet, odio cum
+        consectetur, rerum ea officia assumenda laborum repellat quos nihil ut
+        vel neque. Excepturi consectetur debitis, ratione provident numquam
+        repellendus tenetur facilis dolorum! Esse vero omnis minus harum quas,
+        doloribus, facere, natus aspernatur corrupti quia itaque fugit ducimus
+        ipsum!
+      </ExpandableText>
     </div>
   );
 }
