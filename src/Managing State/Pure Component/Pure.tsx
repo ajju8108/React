@@ -1,7 +1,9 @@
 import React from "react";
 
+let count = 0;
 export default function Pure() {
-  let count = 0;
+  console.log("Message Called", count);
+
   count++;
   return <div>Message {count}</div>;
 }
