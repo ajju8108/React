@@ -41,7 +41,7 @@ function ListGroup({ items, heading, onSelect }: Props) {
       {/* <ul className={styles["list-group"]}> */}
       {/* <ul className={styles.listGroup}> */}
       {/* <ul className={[styles.listGroup, styles.container].join(" ")}> */}
-      <List /* className="list-group container" */>
+      <List /* className="list-group container" */ style={{ color: "red" }}>
         {items.map((item, index) => (
           <ListItem
             active={index === selectedIndex}
