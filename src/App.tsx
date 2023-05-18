@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Alert from "./components/Alert";
-import ExeAlert from "./components/ExeAlert";
-import ExeButton from "./components/ExeButton";
+import ExeAlert from "./components/Exe1/ExeAlert";
+import ExeButton from "./components/Exe1/ExeButton";
 import ListGroup from "./components/ListGroup";
 import { BsFillCalendarFill } from "react-icons/bs";
 
@@ -17,13 +17,13 @@ function App() {
 
   return (
     <div className="App">
-      <ListGroup items={items} heading="Cities" onSelect={handleSelectItem} />
+      {/* <ListGroup items={items} heading="Cities" onSelect={handleSelectItem} /> */}
 
       {/* {alertVisible && (
         <ExeAlert onClose={() => setalertVisible(false)}>My Alert</ExeAlert>
-      )}
-      <ExeButton onClick={() => setalertVisible(true)}>MyBUtton</ExeButton> */}
-      <BsFillCalendarFill color="red" size={60} />
+      )} */}
+      <ExeButton onClick={() => setalertVisible(true)}>MyBUtton</ExeButton>
+      {/* <BsFillCalendarFill color="red" size={60} /> */}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import styles from "./ExeButton.module.css";
 interface Props {
   color?: "primary" | "secondary" | "danger";
   children: string;
@@ -12,7 +12,11 @@ export default function ExeButton({
 }: Props) {
   return (
     <div>
-      <button type="button" className={`btn btn-${color}`} onClick={onClick}>
+      <button
+        type="button"
+        className={[styles.btn, styles["btn-" + color]].join(" ")}
+        onClick={onClick}
+      >
         {children}
       </button>
     </div>
