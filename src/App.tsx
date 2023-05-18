@@ -7,9 +7,8 @@ import { BsFillCalendarFill } from "react-icons/bs";
 import Like from "./components/Exe1/Like"; */
 
 import { useState } from "react";
-import Cart from "./Managing State/Sharing State/Cart";
-import Nav from "./Managing State/Sharing State/Nav";
-import StateStructer from "./Managing State/Sharing State/state structer/StateStructer";
+import StateStructer from "./Managing State/state structer/StateStructer";
+import Pure from "./Managing State/Pure Component/Pure";
 
 function App() {
   /*  const [alertVisible, setalertVisible] = useState(false);
@@ -51,7 +50,10 @@ function App() {
       {/* <Nav cartItemsCount={cartItems.length} />
       <Cart cartItems={cartItems} onClear={() => setCartItems([])} /> */}
       {/*  <button onClick={handleClick}>Show</button> */}
-      <StateStructer />
+      {/* <StateStructer /> */}
+      <Pure />
+      <Pure />
+      <Pure />
     </div>
   );
 }
