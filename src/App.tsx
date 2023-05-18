@@ -22,8 +22,14 @@ function App() {
   {
     /* Managing State */
   }
-  const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
+  // const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
 
+  const [isVisible, setVisibility] = useState(false);
+  const handleClick = () => {
+    console.log(isVisible);
+    setVisibility(true);
+    console.log(isVisible);
+  };
   return (
     <div className="App">
       {/*  <ListGroup items={items} heading="Cities" onSelect={handleSelectItem} />
@@ -41,8 +47,9 @@ function App() {
 
       {/* Managing State */}
 
-      <Nav cartItemsCount={cartItems.length} />
-      <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
+      {/* <Nav cartItemsCount={cartItems.length} />
+      <Cart cartItems={cartItems} onClear={() => setCartItems([])} /> */}
+      <button onClick={handleClick}>Show</button>
     </div>
   );
 }
