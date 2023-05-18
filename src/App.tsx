@@ -9,6 +9,7 @@ import Like from "./components/Exe1/Like"; */
 import { useState } from "react";
 import Cart from "./Managing State/Sharing State/Cart";
 import Nav from "./Managing State/Sharing State/Nav";
+import StateStructer from "./Managing State/Sharing State/state structer/StateStructer";
 
 function App() {
   /*  const [alertVisible, setalertVisible] = useState(false);
@@ -24,12 +25,12 @@ function App() {
   }
   // const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
 
-  const [isVisible, setVisibility] = useState(false);
+  /* const [isVisible, setVisibility] = useState(false);
   const handleClick = () => {
     console.log(isVisible);
     setVisibility(true);
     console.log(isVisible);
-  };
+  }; */
   return (
     <div className="App">
       {/*  <ListGroup items={items} heading="Cities" onSelect={handleSelectItem} />
@@ -49,7 +50,8 @@ function App() {
 
       {/* <Nav cartItemsCount={cartItems.length} />
       <Cart cartItems={cartItems} onClear={() => setCartItems([])} /> */}
-      <button onClick={handleClick}>Show</button>
+      {/*  <button onClick={handleClick}>Show</button> */}
+      <StateStructer />
     </div>
   );
 }
