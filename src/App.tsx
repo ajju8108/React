@@ -6,25 +6,22 @@ import ListGroup from "./components/ListGroup";
 
 function App() {
   const [alertVisible, setalertVisible] = useState(false);
-  /* let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
   const handleSelectItem = (item: string) => {
     console.log(item);
-  }; */
-  /*  const handleOnClick = () => {
+  };
+  const handleOnClick = () => {
     console.log("button clicked");
-  }; */
+  };
 
   return (
     <div className="App">
-      {/* <ListGroup items={items} heading="Cities" onSelect={handleSelectItem} /> */}
-      {/* <Alert>
-        Hello <span> World</span>
-      </Alert> */}
+      <ListGroup items={items} heading="Cities" onSelect={handleSelectItem} />
 
-      {alertVisible && (
+      {/* {alertVisible && (
         <ExeAlert onClose={() => setalertVisible(false)}>My Alert</ExeAlert>
       )}
-      <ExeButton onClick={() => setalertVisible(true)}>MyBUtton</ExeButton>
+      <ExeButton onClick={() => setalertVisible(true)}>MyBUtton</ExeButton> */}
     </div>
   );
 }
