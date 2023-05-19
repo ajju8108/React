@@ -6,16 +6,10 @@ import ListGroup from "./components/ListGroup";
 import { BsFillCalendarFill } from "react-icons/bs";
 import Like from "./components/Exe1/Like"; */
 import { useState } from "react";
-import StateStructer from "./Managing State/state structer/StateStructer";
-import Pure from "./Managing State/Pure Component/Pure";
-import UpdateObject from "./Managing State/Updating Objects/UpdateObject";
-import UpdatingArray from "./Managing State/Updating Array/UpdatingArray";
-import Exe from "./Managing State/Exe/Exe";
-import Exe2 from "./Managing State/Exe/Exe2";
-import Exe3 from "./Managing State/Exe/Exe3";
-import ExpandableText from "./Managing State/Expandable/ExpandableText";
-import BuildingForm from "./Building Form/Building Forms/BuildingForm";
 import ReactHookForm from "./Building Form/ReactHookForm/ReactHookForm";
+import ExpenseList from "./Expense Tracker/components/ExpenseList";
+import ExpenseFilter from "./Expense Tracker/components/ExpenseFilter";
+import { Category } from "@mui/icons-material";
 
 function App() {
   /*  const [alertVisible, setalertVisible] = useState(false);
@@ -37,6 +31,16 @@ function App() {
     setVisibility(true);
     console.log(isVisible);
   }; */
+  const [selectedcategory, setSelectedCategory] = useState("");
+  const [expenses, setExpenses] = useState([
+    { id: 1, description: "aaa", amount: 10, category: "Utilities" },
+    { id: 2, description: "bbb", amount: 10, category: "Utilities" },
+    { id: 3, description: "ccc", amount: 10, category: "Utilities" },
+    { id: 4, description: "ddd", amount: 10, category: "Utilities" },
+  ]);
+  const visibleExpenses = selectedcategory
+    ? expenses.filter((e) => e.category === selectedcategory)
+    : expenses;
   return (
     <div className="App">
       {/*  <ListGroup items={items} heading="Cities" onSelect={handleSelectItem} />
@@ -92,7 +96,18 @@ function App() {
       </ExpandableText> */}
 
       {/* <BuildingForm /> */}
-      <ReactHookForm />
+      {/* <ReactHookForm /> */}
+      <div className="mb-3">
+        <ExpenseFilter
+          onSelectCategory={(category) =>
+            console.log(setSelectedCategory(category))
+          }
+        />
+      </div>
+      <ExpenseList
+        expenses={visibleExpenses}
+        onDelete={(id) => setExpenses(expenses.filter((e) => e.id != id))}
+      />
     </div>
   );
 }
