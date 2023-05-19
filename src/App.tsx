@@ -10,7 +10,9 @@ import ReactHookForm from "./Building Form/ReactHookForm/ReactHookForm";
 import ExpenseList from "./Expense Tracker/components/ExpenseList";
 import ExpenseFilter from "./Expense Tracker/components/ExpenseFilter";
 import { Category } from "@mui/icons-material";
-
+import ExpenseForm from "./Expense Tracker/components/ExpenseForm";
+<link rel="stylesheet" href="" />;
+export const categories = ["Groceries", "Utilities", "Entertainment"];
 function App() {
   /*  const [alertVisible, setalertVisible] = useState(false);
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -97,6 +99,9 @@ function App() {
 
       {/* <BuildingForm /> */}
       {/* <ReactHookForm /> */}
+      <div className="mb-5">
+        <ExpenseForm />
+      </div>
       <div className="mb-3">
         <ExpenseFilter
           onSelectCategory={(category) =>
