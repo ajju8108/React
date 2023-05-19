@@ -14,6 +14,7 @@ import Exe from "./Managing State/Exe/Exe";
 import Exe2 from "./Managing State/Exe/Exe2";
 import Exe3 from "./Managing State/Exe/Exe3";
 import ExpandableText from "./Managing State/Expandable/ExpandableText";
+import BuildingForm from "./Building Form/Building Forms/BuildingForm";
 
 function App() {
   /*  const [alertVisible, setalertVisible] = useState(false);
@@ -63,7 +64,7 @@ function App() {
       {/* <UpdatingArray /> */}
       {/* <Exe /> */}
       {/* <Exe3 /> */}
-      <ExpandableText /* maxChars={10} */>
+      {/* <ExpandableText maxChars={10}>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde nemo
         officia cupiditate, saepe maxime vel quasi enim perferendis repudiandae
         laudantium ducimus deserunt facilis nostrum aut laboriosam amet, aliquam
@@ -87,7 +88,9 @@ function App() {
         repellendus tenetur facilis dolorum! Esse vero omnis minus harum quas,
         doloribus, facere, natus aspernatur corrupti quia itaque fugit ducimus
         ipsum!
-      </ExpandableText>
+      </ExpandableText> */}
+
+      <BuildingForm />
     </div>
   );
 }
