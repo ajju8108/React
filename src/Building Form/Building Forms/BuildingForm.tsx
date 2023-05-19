@@ -1,14 +1,18 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { FormEvent } from "react";
 
 export default function BuildingForm() {
-  const nameRef = useRef<HTMLInputElement>(null);
+  const [person, setPerson] = useState({
+    name: "",
+    age: "",
+  });
+  /*  const nameRef = useRef<HTMLInputElement>(null);
   const ageRef = useRef<HTMLInputElement>(null);
   const person = {
     name: "",
     age: 0,
-  };
-  const handleSubmit = (event: FormEvent) => {
+  }; */
+  /* const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     // console.log("Submitted");
     if (nameRef.current !== null) {
@@ -18,6 +22,11 @@ export default function BuildingForm() {
       person.age = parseInt(ageRef.current.value);
     }
     console.log(person);
+  }; */
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    console.log(person);
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -25,13 +34,31 @@ export default function BuildingForm() {
         <label htmlFor="name" className="form-label">
           Name
         </label>
-        <input id="name" ref={nameRef} type="text" className="form-control" />
+        <input
+          id="name"
+          value={person.name}
+          /* ref={nameRef}  */
+          onChange={(event) => {
+            setPerson({ ...person, name: event.target.value });
+          }}
+          type="text"
+          className="form-control"
+        />
       </div>
       <div className="mb-3">
         <label htmlFor="age" className="form-label">
           Age
         </label>
-        <input id="age" ref={ageRef} type="number" className="form-control" />
+        <input
+          id="age"
+          value={person.age}
+          /* ref={ageRef} */
+          onChange={(event) => {
+            setPerson({ ...person, age: parseInt(event.target.value) });
+          }}
+          type="number"
+          className="form-control"
+        />
       </div>
       <button className="btn btn-primary" type="submit">
         Submit
