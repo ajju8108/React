@@ -15,6 +15,7 @@ import Exe2 from "./Managing State/Exe/Exe2";
 import Exe3 from "./Managing State/Exe/Exe3";
 import ExpandableText from "./Managing State/Expandable/ExpandableText";
 import BuildingForm from "./Building Form/Building Forms/BuildingForm";
+import ReactHookForm from "./Building Form/ReactHookForm/ReactHookForm";
 
 function App() {
   /*  const [alertVisible, setalertVisible] = useState(false);
@@ -90,7 +91,8 @@ function App() {
         ipsum!
       </ExpandableText> */}
 
-      <BuildingForm />
+      {/* <BuildingForm /> */}
+      <ReactHookForm />
     </div>
   );
 }
