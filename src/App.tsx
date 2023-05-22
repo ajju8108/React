@@ -5,14 +5,14 @@ import ExeButton from "./components/Exe1/ExeButton";
 import ListGroup from "./components/ListGroup";
 import { BsFillCalendarFill } from "react-icons/bs";
 import Like from "./components/Exe1/Like"; */
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactHookForm from "./Building Form/ReactHookForm/ReactHookForm";
 import ExpenseList from "./Expense Tracker/components/ExpenseList";
 import ExpenseFilter from "./Expense Tracker/components/ExpenseFilter";
 import { Category } from "@mui/icons-material";
 import ExpenseForm from "./Expense Tracker/components/ExpenseForm";
-<link rel="stylesheet" href="" />;
-export const categories = ["Groceries", "Utilities", "Entertainment"];
+import categories from "./Expense Tracker/categories";
+
 function App() {
   /*  const [alertVisible, setalertVisible] = useState(false);
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -33,7 +33,8 @@ function App() {
     setVisibility(true);
     console.log(isVisible);
   }; */
-  const [selectedcategory, setSelectedCategory] = useState("");
+
+  /*   const [selectedcategory, setSelectedCategory] = useState("");
   const [expenses, setExpenses] = useState([
     { id: 1, description: "aaa", amount: 10, category: "Utilities" },
     { id: 2, description: "bbb", amount: 10, category: "Utilities" },
@@ -42,7 +43,19 @@ function App() {
   ]);
   const visibleExpenses = selectedcategory
     ? expenses.filter((e) => e.category === selectedcategory)
-    : expenses;
+    : expenses; */
+
+  /* Connecting to backend*/
+
+  const ref = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (ref.current) ref.current.focus();
+  });
+
+  useEffect(() => {
+    document.title = "My App";
+  });
   return (
     <div className="App">
       {/*  <ListGroup items={items} heading="Cities" onSelect={handleSelectItem} />
@@ -99,8 +112,12 @@ function App() {
 
       {/* <BuildingForm /> */}
       {/* <ReactHookForm /> */}
-      <div className="mb-5">
-        <ExpenseForm />
+      {/* <div className="mb-5">
+        <ExpenseForm
+          onSubmit={(expense) =>
+            setExpenses([...expenses, { ...expense, id: expenses.length + 1 }])
+          }
+        />
       </div>
       <div className="mb-3">
         <ExpenseFilter
@@ -112,7 +129,10 @@ function App() {
       <ExpenseList
         expenses={visibleExpenses}
         onDelete={(id) => setExpenses(expenses.filter((e) => e.id != id))}
-      />
+      /> */}
+
+      {/* Connecting the backends */}
+      <input ref={ref} type="text" className="form-control" />
     </div>
   );
 }
