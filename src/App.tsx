@@ -12,6 +12,7 @@ import ExpenseFilter from "./Expense Tracker/components/ExpenseFilter";
 import { Category } from "@mui/icons-material";
 import ExpenseForm from "./Expense Tracker/components/ExpenseForm";
 import categories from "./Expense Tracker/categories";
+import ProductList from "./Connecting to backend/ProductList";
 
 function App() {
   /*  const [alertVisible, setalertVisible] = useState(false);
@@ -47,7 +48,7 @@ function App() {
 
   /* Connecting to backend*/
 
-  const ref = useRef<HTMLInputElement>(null);
+  /* const ref = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (ref.current) ref.current.focus();
@@ -55,7 +56,9 @@ function App() {
 
   useEffect(() => {
     document.title = "My App";
-  });
+  }); */
+
+  const [category, setCategory] = useState("");
   return (
     <div className="App">
       {/*  <ListGroup items={items} heading="Cities" onSelect={handleSelectItem} />
@@ -132,7 +135,20 @@ function App() {
       /> */}
 
       {/* Connecting the backends */}
-      <input ref={ref} type="text" className="form-control" />
+      {/* <input ref={ref} type="text" className="form-control" /> */}
+      <select
+        name=""
+        id=""
+        className="form-select"
+        onChange={(event) => {
+          setCategory(event.target.value);
+        }}
+      >
+        <option value=""></option>
+        <option value="Clothing">Clothing</option>
+        <option value="Household">Household</option>
+      </select>
+      <ProductList category={category} />
     </div>
   );
 }
