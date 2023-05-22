@@ -13,6 +13,7 @@ import { Category } from "@mui/icons-material";
 import ExpenseForm from "./Expense Tracker/components/ExpenseForm";
 import categories from "./Expense Tracker/categories";
 import ProductList from "./Connecting to backend/ProductList";
+import FetchingData from "./Connecting to backend/Fetching/FetchingData";
 
 function App() {
   /*  const [alertVisible, setalertVisible] = useState(false);
@@ -136,7 +137,7 @@ function App() {
 
       {/* Connecting the backends */}
       {/* <input ref={ref} type="text" className="form-control" /> */}
-      <select
+      {/*  <select
         name=""
         id=""
         className="form-select"
@@ -148,7 +149,8 @@ function App() {
         <option value="Clothing">Clothing</option>
         <option value="Household">Household</option>
       </select>
-      <ProductList category={category} />
+      <ProductList category={category} /> */}
+      <FetchingData />
     </div>
   );
 }
