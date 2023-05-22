@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
-import apiClient, { CanceledError } from "../../services/api-client";
+import { useEffect } from "react";
+import { CanceledError } from "../../services/api-client";
 import { useState } from "react";
-interface User {
-  id: number;
-  name: string;
-}
+import userService, { User } from "../../services/user-service";
+
 export default function FetchingData() {
   const [users, setUsers] = useState<User[]>([]);
   const [error, setError] = useState("");
@@ -21,12 +19,10 @@ export default function FetchingData() {
       }
     };
     fetchUsers(); */
-    const controller = new AbortController();
+
     setLoading(true);
-    apiClient
-      .get<User[]>("/users", {
-        signal: controller.signal,
-      })
+    const { request, cancel } = userService.getAllUSers();
+    request
       .then((res) => {
         setUsers(res.data);
         setLoading(false);
@@ -37,13 +33,13 @@ export default function FetchingData() {
         setLoading(false);
       });
 
-    return () => controller.abort();
+    return () => cancel();
   }, []);
 
   const deleteUser = (user: User) => {
     const originalUsers = [...users];
     setUsers(users.filter((u) => u.id !== user.id));
-    apiClient.delete("/users/" + user.id).catch((err) => {
+    userService.deleteUser(user.id).catch((err) => {
       setError(err.message);
       setUsers(originalUsers);
     });
@@ -52,8 +48,9 @@ export default function FetchingData() {
     const originalUsers = [...users];
     const newUser = { id: 0, name: "Mosh" };
     setUsers([newUser, ...users]);
-    apiClient
-      .post("/users", newUser)
+
+    userService
+      .createUser(newUser)
       .then(({ data: savedUser }) => {
         setUsers([savedUser, ...users]);
       })
@@ -68,7 +65,7 @@ export default function FetchingData() {
     const originalUsers = [...users];
     const updateUser = { ...user, name: user.name + "!" };
     setUsers(users.map((u) => (u.id === user.id ? updateUser : u)));
-    apiClient.patch("/users/" + user.id, updateUser).catch((err) => {
+    userService.updateUser(updateUser).catch((err) => {
       setError(err.message);
       setUsers(originalUsers);
     });
