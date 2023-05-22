@@ -2,44 +2,15 @@ import { useEffect } from "react";
 import { CanceledError } from "../../services/api-client";
 import { useState } from "react";
 import userService, { User } from "../../services/user-service";
+import useUsers from "../../hooks/useUsers";
 
 export default function FetchingData() {
-  const [users, setUsers] = useState<User[]>([]);
-  const [error, setError] = useState("");
-  const [isLoading, setLoading] = useState(false);
-  useEffect(() => {
-    /* const fetchUsers = async () => {
-      try {
-        const res = await axios.get<User[]>(
-          "https://jsonplaceholder.typicode.com/xusers"
-        );
-        setUsers(res.data);
-      } catch (err) {
-        setError((err as AxiosError).message);
-      }
-    };
-    fetchUsers(); */
-
-    setLoading(true);
-    const { request, cancel } = userService.getAllUSers();
-    request
-      .then((res) => {
-        setUsers(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        if (err instanceof CanceledError) return;
-        setError(err.message);
-        setLoading(false);
-      });
-
-    return () => cancel();
-  }, []);
+  const { users, error, isLoading, setError, setUsers } = useUsers();
 
   const deleteUser = (user: User) => {
     const originalUsers = [...users];
     setUsers(users.filter((u) => u.id !== user.id));
-    userService.deleteUser(user.id).catch((err) => {
+    userService.delete(user.id).catch((err) => {
       setError(err.message);
       setUsers(originalUsers);
     });
@@ -50,7 +21,7 @@ export default function FetchingData() {
     setUsers([newUser, ...users]);
 
     userService
-      .createUser(newUser)
+      .create(newUser)
       .then(({ data: savedUser }) => {
         setUsers([savedUser, ...users]);
       })
@@ -65,7 +36,7 @@ export default function FetchingData() {
     const originalUsers = [...users];
     const updateUser = { ...user, name: user.name + "!" };
     setUsers(users.map((u) => (u.id === user.id ? updateUser : u)));
-    userService.updateUser(updateUser).catch((err) => {
+    userService.update(updateUser).catch((err) => {
       setError(err.message);
       setUsers(originalUsers);
     });
